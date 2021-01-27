@@ -13,8 +13,10 @@ class ProjectsController < ApplicationController
     end
 
     def create
-        if @project = Project.create(project_params)
-        redirect_to projects_path
+        @project = Project.create(project_params)
+        @project.user_id = current_user.id
+        if @project.save
+            redirect_to project_path(@project)
         else
             render 'new'
         end

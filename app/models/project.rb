@@ -5,4 +5,5 @@ class Project < ApplicationRecord
     has_one_attached :photo
 
     accepts_nested_attributes_for :tools
+
 end
