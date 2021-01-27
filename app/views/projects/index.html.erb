@@ -1,0 +1,5 @@
+<h1>Check out all of our community's amazing work!</h1>
+
+<% @projects.each do |project| %>
+    <%= link_to project.title, project_path(project) %><br>
+<% end %>
