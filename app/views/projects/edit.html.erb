@@ -1,4 +1,4 @@
-<h1>Add a New Project</h1>
+<h1>Edit Project</h1>
 
 <%= form_for(@project) do |f| %>
     <label>Title: </label>
@@ -22,7 +22,5 @@
     <label>Photo: </label>
     <%= f.file_field :photo %><br>
 
-    <%= f.submit "Create Project" %>
+    <%= f.submit "Save Changes" %>
 <% end %>
-
-Add "add another tool" button/link? Select or enter brand/name?

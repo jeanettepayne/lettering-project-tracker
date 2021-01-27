@@ -1,1 +1,7 @@
 <%= @project.title %>
+
+<% if @project.photo.attached? %>
+    <image src="<%= (url_for(@project.photo)) %>">
+<% end %>
+<br>
+<%= link_to "Edit Project", edit_project_path(@project) %>
