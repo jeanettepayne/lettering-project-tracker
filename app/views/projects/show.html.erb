@@ -1,7 +1,7 @@
-<%= @project.title %>
+<h1><%= @project.title %></h1><br>
 
 <% if @project.photo.attached? %>
-    <image src="<%= (url_for(@project.photo)) %>">
+    <image class="resize" src="<%= (url_for(@project.photo)) %>">
 <% end %>
 <br>
 <%= link_to "Edit Project", edit_project_path(@project) %>
