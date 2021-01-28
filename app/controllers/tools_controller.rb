@@ -13,7 +13,7 @@ class ToolsController < ApplicationController
     end
 
     def create
-        @tool = Tool.create(project_params)
+        @tool = Tool.create(tool_params)
     end
 
     private
