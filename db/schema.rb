@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2021_01_27_021544) do
   create_table "project_tools", force: :cascade do |t|
     t.integer "project_id"
     t.integer "tool_id"
-    t.boolean "favorite"
+    t.boolean "favorite", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2021_01_27_021544) do
   end
 
   create_table "tools", force: :cascade do |t|
-    t.string "brand"
+    t.string "brand", default: ""
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -1,0 +1,11 @@
+<h1>Add a New Tool</h1>
+
+<%= form_for(@tool) do |f| %>
+    <label>Brand: </label>
+    <%= f.text_field :brand %><br>
+
+    <label>Name: </label>
+    <%= f.text_field :name %><br>
+
+    <%= f.submit "Add Tool to Project" %>
+<% end %>

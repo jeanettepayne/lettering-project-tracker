@@ -18,3 +18,12 @@
     width: 400px;
     height: auto;
 }
+
+.fa-star {
+    float: left;
+    font-size: 70%;
+    margin-top: 5px;
+    margin-right: 5px;
+  }
+  
+  .favorite { color: yellow; }
