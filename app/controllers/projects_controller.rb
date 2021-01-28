@@ -10,6 +10,7 @@ class ProjectsController < ApplicationController
 
     def new
         @project = Project.new
+        @project.tools.build(brand: 'Enter or Select Brand')
     end
 
     def create

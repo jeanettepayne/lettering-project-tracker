@@ -11,7 +11,7 @@
     <%= f.text_field :style %><br>
 
     Tools Used:<br>
-    <%= fields_for :tools do |tool| %>
+    <%= f.fields_for :tools do |tool| %>
         <label>Brand: </label>
         <%= tool.text_field :brand %><br>
 

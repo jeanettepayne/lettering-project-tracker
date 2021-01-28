@@ -13,11 +13,7 @@ class ToolsController < ApplicationController
     end
 
     def create
-        if @tool = Project.create(project_params)
-            redirect_to tool_path(@tool)
-        else
-            render 'new'
-        end
+        @tool = Tool.create(project_params)
     end
 
     private
