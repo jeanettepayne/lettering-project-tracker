@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   resources :project_tools
   resources :tools
-  resources :projects
+  resources :projects do
+    resources :tools, only [:show, :index, :new, :create]
+  end
+
   resources :users
 
   resources :favorites, only: [:create, :destroy]

@@ -14,6 +14,9 @@ class ToolsController < ApplicationController
 
     def create
         @tool = Tool.create(tool_params)
+        @pt = ProjectTool.create
+        @pt.tool_id = @tool.id
+        # create project tools child here
     end
 
     private
