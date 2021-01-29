@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
 
     def show
-        @project = Project.find_by(id: params[:id])
+        @project = Project.find_by(id: params[:id]) || Project.find_by(id: params[:project_id])
     end
 
     def index
@@ -10,7 +10,6 @@ class ProjectsController < ApplicationController
 
     def new
         @project = Project.new
-        @project.tools.build(brand: 'Enter or Select Brand')
     end
 
     def create

@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  resources :project_tools
   resources :tools
   resources :projects do
-    resources :tools, only [:show, :index, :new, :create]
+    resources :tools
   end
 
   resources :users

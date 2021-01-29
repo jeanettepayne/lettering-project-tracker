@@ -14,9 +14,16 @@ class ToolsController < ApplicationController
 
     def create
         @tool = Tool.create(tool_params)
-        @pt = ProjectTool.create
-        @pt.tool_id = @tool.id
-        # create project tools child here
+        if @tool.save
+            @pt = ProjectTool.new
+            @pt.project_id = params[:project_id]
+            @pt.tool_id = @tool.id
+            @pt.save
+            # create project tools child here
+            redirect_to projects_path
+        else
+            render 'new'
+        end
     end
 
     private

@@ -8,7 +8,7 @@
         <%= tool.brand %> - <%= tool.name %><br>
     <% end %>
     </ul>
-<%= link_to "Add a Tool", new_tool_path %><br>
+<%= link_to "Add a Tool", new_project_tool_path(@project.id) %><br>
 
 <% if @project.photo.attached? %>
     <image class="resize" src="<%= (url_for(@project.photo)) %>">

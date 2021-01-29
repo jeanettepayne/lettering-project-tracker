@@ -11,6 +11,6 @@ class ProjectToolsController < ApplicationController
     private
 
     def pt_params
-        params.require(:project_tool).permit(:favorite)
+        params.require(:project_tool).permit(:favorite, :project_id, tool_id)
     end
 end

@@ -7,12 +7,6 @@
     <label>Name: </label>
     <%= f.text_field :name %><br>
 
-    <%= f.fields_for :project_tools do |pt| %> 
-        <label>Favorite Tool </label>
-        <h1><%= toggle_favorite(pt) %> <%= pt.name %></h1>
-    <% end %>
-
-
     <%= f.submit "Add Tool to Project" %>
 <% end %>
 
