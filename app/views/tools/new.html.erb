@@ -7,9 +7,9 @@
     <label>Name: </label>
     <%= f.text_field :name %><br>
 
-    <%= f.fields_for :project_tools do |pt| %>
-        <%= pt.hidden_field :project_id, value: Project.find_by(id: params[:id]) %>
-    <% end %>
+     <%= f.fields_for :project_tools do |pt| %>
+        <%= pt.hidden_field :project_id, value: params[:project_id] %>
+    <% end %> 
 
     <%= f.submit "Add Tool to Project" %>
 <% end %>

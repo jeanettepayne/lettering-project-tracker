@@ -1,6 +1,6 @@
 class ProjectTool < ApplicationRecord
     belongs_to :project
-    belongs_to :tool
+    belongs_to :tool, optional: true
 
 
     def favorite!
