@@ -33,14 +33,6 @@ ActiveRecord::Schema.define(version: 2021_01_27_021544) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "project_tools", force: :cascade do |t|
-    t.integer "project_id"
-    t.integer "tool_id"
-    t.boolean "favorite", default: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "projects", force: :cascade do |t|
     t.string "title"
     t.text "quote"
@@ -48,6 +40,14 @@ ActiveRecord::Schema.define(version: 2021_01_27_021544) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "style"
+  end
+
+  create_table "projects_tools", force: :cascade do |t|
+    t.integer "project_id"
+    t.integer "tool_id"
+    t.boolean "favorite", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "tools", force: :cascade do |t|

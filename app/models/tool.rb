@@ -1,6 +1,6 @@
 class Tool < ApplicationRecord
-    has_many :project_tools
-    has_many :projects, through: :project_tools
+    has_many :projects_tools
+    has_many :projects, through: :projects_tools
    
 
 

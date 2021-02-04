@@ -41,4 +41,4 @@ tool10 = Tool.create(brand: "Molotow", name: "Liquid Chrome 1mm")
 tool11 = Tool.create(brand: "Sharpie", name: "Marker")
 tool12 = Tool.create(brand: "Prismacolor", name: "Fineliner")
 
-pt1 = ProjectTool.create(tool_id: 1)
+

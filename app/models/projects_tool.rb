@@ -1,5 +1,5 @@
-class ProjectTool < ApplicationRecord
-    belongs_to :project
+class ProjectsTool < ApplicationRecord
+    belongs_to :project, optional: true
     belongs_to :tool, optional: true
 
 

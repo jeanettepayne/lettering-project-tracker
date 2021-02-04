@@ -1,4 +1,4 @@
-module ProjectToolsHelper
+module ProjectsToolsHelper
 
     def toggle_favorite(pt)
         if pt.favorite

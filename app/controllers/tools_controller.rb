@@ -9,15 +9,16 @@ class ToolsController < ApplicationController
     end
 
     def new
+        @pt = ProjectsTool.new
         @tool = Tool.new
         # binding.pry
-        @pt = ProjectTool.create(project_id: params[:project_id])
+        # @pt = ProjectTool.create(project_id: params[:project_id])
     end
 
     def create
         @tool = Tool.create(tool_params)
         binding.pry
-        @pt = ProjectTool.find_by(tool_id: "")
+        @pt = ProjectsTool.find_by(tool_id: "")
         @pt.tool_id = @tool.id
         @pt.save
             # create project tools child here
@@ -30,5 +31,6 @@ class ToolsController < ApplicationController
     def tool_params
         params.require(:tool).permit(:brand, :name)
     end
+
 
 end
