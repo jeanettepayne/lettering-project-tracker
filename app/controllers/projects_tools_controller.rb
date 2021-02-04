@@ -3,12 +3,13 @@ class ProjectsToolsController < ApplicationController
     def new
         @tool = Tool.new
         @pt = ProjectsTool.create
+        binding.pry
         render 'tools/new'
     end
 
     def create
         @tool = Tool.create(brand: params[:projects_tool][:tool][:brand], name: params[:projects_tool][:tool][:name])
-        binding.pry
+        # binding.pry
         @pt = ProjectsTool.find_by(params[:projects_tool][:project_id], params[:projects_tool][:tool][:name])
         @pt.tool_id = @tool.id
         @pt.save

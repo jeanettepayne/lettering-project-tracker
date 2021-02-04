@@ -9,7 +9,6 @@ class ToolsController < ApplicationController
     end
 
     def new
-        @pt = ProjectsTool.new
         @tool = Tool.new
         # binding.pry
         # @pt = ProjectTool.create(project_id: params[:project_id])
