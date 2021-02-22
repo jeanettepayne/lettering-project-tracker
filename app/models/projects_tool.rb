@@ -3,6 +3,7 @@ class ProjectsTool < ApplicationRecord
     belongs_to :tool, optional: true
 
 
+
     def favorite!
         self.favorite = true
         self.save!
