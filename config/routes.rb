@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :projects do
     resources :tools
   end
+  
   resources :projects_tools
 
   resources :users

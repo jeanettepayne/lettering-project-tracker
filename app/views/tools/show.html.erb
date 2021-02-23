@@ -3,10 +3,12 @@
 <h4>Brand: <%= @tool.brand %></h4><br>
 <h4>Name: <%= @tool.name %></h4><br>
 
-<form>
-<label>Favorite?</label>
-<input type="checkbox" id="favorite" name="tool[favorite]">
-<input type="submit" hidden>
+<%= form_tag edit_projects_tool_path(@tool.projects_tools.first) %>
+<% @tool.projects_tools.each do |pt| %>
+    <label>Favorite Tool?</label>
+    <%= check_box_tag "Favorite", {:checked=>pt.favorite!, :disabled=>pt.unfavorite!} %><br>
+<% end %>
+<%= submit_tag %>
 </form>
 
 <%= link_to "Back to Projects", projects_path %>
