@@ -5,7 +5,7 @@
 <h5>Tools used:</h5><br>
     <ul>
     <% @project.tools.each do |tool|%>
-        <%= tool.brand %> - <%= tool.name %><br>
+        <%= tool.brand %> <%= tool.name %><br>
     <% end %>
     </ul>
 <%= link_to "Add a Tool", new_project_tool_path(@project.id) %><br>

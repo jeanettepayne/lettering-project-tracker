@@ -8,7 +8,8 @@
     <%= f.text_area :quote %><br>
 
     <label>Style: </label>
-    <%= f.text_field :style %><br>
+    <%= f.select :style, [["Digital"], ["Traditional"]] %><br>
+  
 
     <!-- Tools Used:<br>
     <%= f.fields_for :project_tools do |tool| %>

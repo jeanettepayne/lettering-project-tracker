@@ -16,6 +16,9 @@ old tools/new form
     <%= f.submit "Add Tool to Project" %>
 <% end %> -->
 
+<label>Style: </label>
+    <%= f.text_field :style %><br>
+
 
 nested pt form 
 
