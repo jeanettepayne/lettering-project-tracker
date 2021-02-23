@@ -6,3 +6,7 @@
 <% @user.projects.each do |proj| %>
     <%= link_to proj.title, project_path(proj) %><br>
 <% end %>
+
+<br>
+<%= link_to "Edit Account Info", edit_user_path(@user) %><br>
+LINK TO DELETE ACCOUNT/USER
