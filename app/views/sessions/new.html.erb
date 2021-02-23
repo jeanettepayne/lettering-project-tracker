@@ -1,1 +1,12 @@
 LOGIN FORM GOES HERE
+
+<%= form_for @user, url: login_path, method: :post do |f| %>
+    <label>Email Address: </label>
+    <%= f.text_field :email %><br>
+
+    <label>Password: </label>
+    <%= f.password_field :password %><br>
+
+    <%= f.submit "Log In" %>
+
+<% end %>

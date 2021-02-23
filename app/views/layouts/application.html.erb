@@ -11,7 +11,12 @@
   </head>
 
   <body>
-    
+    <% if logged_in? %>
+      Logged in as <%= current_user.full_name %>
+    <% else %>
+      <%= link_to "Log In", "/login" %>
+      <%= link_to "Sign Up", "/users/new" %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
