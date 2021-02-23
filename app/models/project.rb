@@ -4,6 +4,8 @@ class Project < ApplicationRecord
     has_many :tools, through: :projects_tools
     has_one_attached :photo
 
+    
+
     accepts_nested_attributes_for :projects_tools
 
     # def tool_attributes=(tool)

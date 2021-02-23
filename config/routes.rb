@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :projects do
     resources :tools
   end
-  
+
   resources :projects_tools
 
   resources :users
@@ -13,5 +13,7 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   post "/logout", to: "sessions#destroy"
+
+  root 'welcome#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
