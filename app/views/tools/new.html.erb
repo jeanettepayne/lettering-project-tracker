@@ -8,6 +8,7 @@
     <%= f.text_field :name %><br>
 
     <%= f.fields_for :projects_tools do |projects_tool_attributes| %>
+        <%= projects_tool_attributes.hidden_field :project_id, :value=>params["project_id"] %>
         <label>Favorite This Tool?</label>
         <%= projects_tool_attributes.select :favorite, [["Nah, it's just okay", false], ["Duh! It's amazing!", true]] %>
        
