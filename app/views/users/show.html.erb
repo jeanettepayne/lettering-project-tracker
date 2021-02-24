@@ -2,9 +2,17 @@
 
 <h3><%= link_to "Add a new project", new_project_path %></h3><br>
 
-<h4><%= @user.first_name %>'s Projects: </h4>
+<h4>My Projects: </h4>
 <% @user.projects.each do |proj| %>
     <%= link_to proj.title, project_path(proj) %><br>
+<% end %>
+
+MAYBE TAKE THIS OUT COME BACK LATER - try to make uniq after switching add tool to select or enter
+<h4>My Toolbox: </h4>
+<% @user.projects.each do |proj| %>
+    <% proj.tools.each do |tool| %>
+        <%= tool.brand %> <%= tool.name %><br>
+    <% end %>
 <% end %>
 
 <br>
