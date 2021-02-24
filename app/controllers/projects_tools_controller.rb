@@ -8,6 +8,9 @@ class ProjectsToolsController < ApplicationController
 
     def create
         @pt = ProjectsTool.create(pt_params)
+        tool = Tool.find_or_create_by(brand: params["projects_tool"]["tool"]["brand"])
+        @pt.tool_id = 
+        binding.pry
         # @tool = Tool.create(brand: params[:projects_tool][:tool][:brand], name: params[:projects_tool][:tool][:name])
         # binding.pry
         # @pt = ProjectsTool.find_by(params[:projects_tool][:project_id], params[:projects_tool][:tool][:name])

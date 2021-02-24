@@ -1,3 +1,28 @@
 <h1>Add Tool to Project</h1><br>
 
+<%= form_for(@pt) do |f| %>
+    <%= f.fields_for(:tool) do |ft| %>
+        <label>Select Existing Brand or Enter a New One</label>
+        <%= ft.text_field :brand, list: "brands_autocomplete" %>
+            <datalist id="brands_autocomplete">
+                <% Tool.select(:brand).distinct.each do |tool| %>
+                    <option value="<%= tool.brand %>">
+                <% end %>
+            </datalist><br>
+
+        <label>Select Existing Tool Name or Enter a New One</label>
+        <%= ft.text_field :name, list: "names_autocomplete" %>
+            <datalist id="names_autocomplete">
+                <% Tool.select(:name).distinct.each do |tool| %>
+                    <option value="<%= tool.name %>">
+                <% end %>
+            </datalist><br>
+    <% end %>
+
+    <label>Favorite This Tool?</label>
+    <%= f.check_box :favorite, {}, true, false %><br>
+
+    <%= f.submit %>
+<% end %>
+
 
