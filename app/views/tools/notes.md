@@ -1,3 +1,24 @@
+<h1>Add a New Tool</h1>
+
+<%= form_for(@tool) do |f| %>
+    <label>Brand: </label>
+    <%= f.text_field :brand %><br>
+
+    <label>Name: </label>
+    <%= f.text_field :name %><br>
+
+    <%= f.fields_for :projects_tools do |projects_tool_attributes| %>
+        <%= projects_tool_attributes.hidden_field :project_id, :value=>params["project_id"] %>
+        <label>Favorite This Tool?</label>
+        <%= projects_tool_attributes.select :favorite, [["Nah, it's just okay", false], ["Duh! It's amazing!", true]] %>
+       
+    <% end %> 
+    <br>
+
+    <%= f.submit "Add Tool to Project" %>
+<% end %>
+
+
 old tools/new form
 
 <!-- <%= form_for(@tool) do |f| %>
@@ -42,3 +63,4 @@ nested pt form
     <%= f.submit "Add Tool" %>
 
 <% end %>
+
