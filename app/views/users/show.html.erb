@@ -10,7 +10,7 @@
 MAYBE TAKE THIS OUT COME BACK LATER - try to make uniq after switching add tool to select or enter
 <h4>My Toolbox: </h4>
 <% @user.projects.each do |proj| %>
-    <% proj.tools.each do |tool| %>
+    <% proj.tools.each.uniq do |tool| %>
         <%= tool.brand %> <%= tool.name %><br>
     <% end %>
 <% end %>

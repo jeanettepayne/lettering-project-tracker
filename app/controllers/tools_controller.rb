@@ -18,9 +18,9 @@ class ToolsController < ApplicationController
     def create
         @tool = Tool.create(tool_params)
         # binding.pry
-        @pt = ProjectsTool.find_by(project_id: params[:project_id])
-        # @pt = ProjectsTool.find_by(tool_id: @tool.id)
-        # @pt.project_id = params["tool"]["projects_tools_attributes"]["0"]["project_id"]
+        # @pt = ProjectsTool.find_by(project_id: params[:project_id])
+        @pt = ProjectsTool.find_by(tool_id: @tool.id)
+        @pt.project_id = params["tool"]["projects_tools_attributes"]["0"]["project_id"]
         # binding.pry
         @pt.tool_id = @tool.id
         @pt.save

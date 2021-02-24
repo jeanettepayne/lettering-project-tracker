@@ -3,7 +3,7 @@
     <label>Brand: </label>
         <%= f.text_field :brand, list: "brands_autocomplete" %>
         <datalist id="brands_autocomplete">
-            <% Tool.all.each do |tool| %>
+            <% Tool.select(:brand).distinct.each do |tool| %>
                 <option value="<%= tool.brand %>">
             <% end %>
         </datalist><br>
