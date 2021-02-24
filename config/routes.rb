@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :projects do
-    resources :tools
+    resources :projects_tools
   end
 
   resources :tools

@@ -1,18 +1,18 @@
 class ProjectsToolsController < ApplicationController
 
     def new
-        @tool = Tool.new
-        @pt = ProjectsTool.create
-        binding.pry
-        render 'tools/new'
+        # @tool = Tool.find_or_create_by(id: params[:tool_id])
+        @pt = ProjectsTool.new
+        render 'projects_tools/new'
     end
 
     def create
-        @tool = Tool.create(brand: params[:projects_tool][:tool][:brand], name: params[:projects_tool][:tool][:name])
+        @pt = ProjectsTool.create(pt_params)
+        # @tool = Tool.create(brand: params[:projects_tool][:tool][:brand], name: params[:projects_tool][:tool][:name])
         # binding.pry
-        @pt = ProjectsTool.find_by(params[:projects_tool][:project_id], params[:projects_tool][:tool][:name])
-        @pt.tool_id = @tool.id
-        @pt.save
+        # @pt = ProjectsTool.find_by(params[:projects_tool][:project_id], params[:projects_tool][:tool][:name])
+        # @pt.tool_id = @tool.id
+        # @pt.save
             # create project tools child here
         redirect_to projects_path
     end
