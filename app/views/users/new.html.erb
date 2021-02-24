@@ -1,17 +1,3 @@
 <h1>Sign up to start tracking your projects!</h1>
 
-<%= form_for(@user) do |f| %>
-    <label>First Name: </label>
-    <%= f.text_field :first_name %><br>
-
-    <label>Last Name: </label>
-    <%= f.text_field :last_name %><br>
-
-    <label>Email Address: </label>
-    <%= f.text_field :email %><br>
-
-    <label>Password: </label>
-    <%= f.password_field :password %><br>
-
-    <%= f.submit "Create Profile" %>
-<% end %>
+<%= render 'form' %>
