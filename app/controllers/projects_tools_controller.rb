@@ -17,6 +17,14 @@ class ProjectsToolsController < ApplicationController
         redirect_to projects_path
     end
 
+    def edit
+        @pt = ProjectsTools.find(params[:id])
+    end
+
+    def update
+
+    end
+
     private
 
     def pt_params

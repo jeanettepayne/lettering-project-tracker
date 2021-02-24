@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :tools
   resources :projects do
     resources :tools
   end

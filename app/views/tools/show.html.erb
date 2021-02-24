@@ -3,19 +3,12 @@
 <h4>Brand: <%= @tool.brand %></h4><br>
 <h4>Name: <%= @tool.name %></h4><br>
 
-<%= form_tag edit_projects_tool_path(@tool.projects_tools.first) %>
-<% @tool.projects_tools.each do |pt| %>
-    <label>Favorite Tool?</label>
-    <%= check_box_tag "Favorite", {:checked=>pt.favorite!, :disabled=>pt.unfavorite!} %><br>
-<% end %>
-<%= submit_tag %>
-</form>
 
-<%= link_to "Edit Tool Info", edit_tool_path(@tool) %><br>
+<%= link_to "Edit Tool Info", edit_project_tool_path(@tool) %><br>
 
 DELETE/REMOVE TOOL FROM PROJECT LINK<br>
-<%= button_to "Delete Tool", tool_path(@tool), method: :delete %>
+<%= button_to "Delete Tool", project_tool_path(@tool), method: :delete %>
 
 MAKE THIS A LINK BACK TO THE PROJECT YOU CAME HERE FROM
-<%= link_to "Back to Projects", projects_path %>
+<%= link_to "Back to Project", project_path(@project) %>
 

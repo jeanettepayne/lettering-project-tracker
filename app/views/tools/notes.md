@@ -1,22 +1,11 @@
-<h1>Add a New Tool</h1>
-
-<%= form_for(@tool) do |f| %>
-    <label>Brand: </label>
-    <%= f.text_field :brand %><br>
-
-    <label>Name: </label>
-    <%= f.text_field :name %><br>
-
-    <%= f.fields_for :projects_tools do |projects_tool_attributes| %>
-        <%= projects_tool_attributes.hidden_field :project_id, :value=>params["project_id"] %>
-        <label>Favorite This Tool?</label>
-        <%= projects_tool_attributes.select :favorite, [["Nah, it's just okay", false], ["Duh! It's amazing!", true]] %>
-       
-    <% end %> 
-    <br>
-
-    <%= f.submit "Add Tool to Project" %>
+FAVORITE EDIT FROM TOOL SHOW PAGE
+<%= form_tag edit_projects_tool_path(@tool.projects_tools.last) %>
+<% @tool.projects_tools.each do |pt| %>
+    <label>Favorite Tool?</label>
+    <%= check_box_tag "Favorite", {:checked=>pt.favorite!, :disabled=>pt.unfavorite!} %><br>
 <% end %>
+<%= submit_tag %>
+</form>
 
 
 old tools/new form
