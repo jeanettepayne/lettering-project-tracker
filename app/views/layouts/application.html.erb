@@ -17,6 +17,14 @@
       <%= link_to "Log In", "/login" %>
       <%= link_to "Sign Up", "/users/new" %>
     <% end %>
+
     <%= yield %>
+
+    <footer>
+      <% if current_user %>
+        <%= link_to "Home", user_path(current_user) %>
+        <%= link_to "All Projects", projects_path %>
+      <% end %>
+    </footer>
   </body>
 </html>
