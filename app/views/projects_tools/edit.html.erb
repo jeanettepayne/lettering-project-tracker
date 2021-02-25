@@ -1,4 +1,4 @@
-<h1>Add Tool to Project</h1><br>
+<h1>Edit Tool</h1><br>
 
 <%= form_for(@pt) do |f| %>
     <%= f.fields_for(:tool) do |ft| %>
@@ -22,9 +22,5 @@
     <label>Favorite This Tool?</label>
     <%= f.check_box :favorite, {}, true, false %><br>
 
-     <%= f.hidden_field :project_id, value: params[:project_id] %>
-
     <%= f.submit %>
 <% end %>
-
-

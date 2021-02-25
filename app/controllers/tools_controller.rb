@@ -2,7 +2,7 @@ class ToolsController < ApplicationController
 
     def show
         @tool = Tool.find(params[:id])
-        @project = params[:project_id]
+        # @project = @tool.project
     end
 
     def index
