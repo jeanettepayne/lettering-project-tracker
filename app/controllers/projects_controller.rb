@@ -10,6 +10,7 @@ class ProjectsController < ApplicationController
 
     def new
         @project = Project.new
+        @project.user_id = params[:id]
     end
 
     def create
