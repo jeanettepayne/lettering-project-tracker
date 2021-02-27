@@ -33,6 +33,15 @@ class ProjectsController < ApplicationController
         redirect_to project_path(@project)
     end
 
+    def destroy
+        project = Project.find(params[:id])
+        project.projects_tools.each do |pt|
+            pt.destroy
+        end
+        project.destroy
+        redirect_to '/'
+    end
+
     private
 
     def project_params
