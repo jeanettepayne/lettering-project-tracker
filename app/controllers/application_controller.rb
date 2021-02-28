@@ -3,8 +3,8 @@ class ApplicationController < ActionController::Base
     helper_method :logged_in?
 
     def current_user
-        if session[:username]
-            @current_user ||= User.find_by(email: session[:username])
+        if session[:user_id]
+            @current_user ||= User.find_by(id: session[:user_id])
         end
     end
 
