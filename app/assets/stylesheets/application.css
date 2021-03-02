@@ -27,3 +27,21 @@
   }
   
   .favorite { color: yellow; }
+
+  body {
+      background-color: rosybrown;
+      font-family: 'Raleway', sans-serif;
+      text-align: center;
+  }
+
+  div.button {
+      color: grey;
+  }
+
+  div.username {
+      text-align: left;
+  }
+
+  h1 {
+      font-style: bold;
+  }
