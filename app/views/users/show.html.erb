@@ -13,4 +13,4 @@
 <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
   <input type=submit value='Log Out'>
 <% end %><br>
-<%= button_to "Delete Account", user_path(@user), method: :delete %>
+<%= link_to "Delete Account", user_path(@user), method: :delete %>

@@ -3,3 +3,10 @@
 <% @projects.each do |project| %>
     <%= link_to project.title, project_path(project) %><br>
 <% end %>
+
+<footer>
+    <% if !current_user %>
+        <%= link_to "Log In", login_path %>
+        <%= link_to "Create Account", new_user_path %>
+    <% end %>
+</footer>
