@@ -3,16 +3,14 @@ class ProjectsToolsController < ApplicationController
     def new
         # @tool = Tool.find_or_create_by(id: params[:tool_id])
         @pt = ProjectsTool.new
-        # @pt.project_id = params[:project_id]
-        
+        @pt.project_id = params[:project_id]
+    
         render 'projects_tools/new'
     end
 
     def create
         @pt = ProjectsTool.create(pt_params)
-        # tool = Tool.find_or_create_by(brand: params["projects_tool"]["tool"]["brand"])
         tool = Tool.where(brand: params["projects_tool"]["tool"]["brand"], name: params["projects_tool"]["tool"]["name"]).first_or_create
-        # name: params["projects_tool"]["tool"]["name"]
         @pt.tool_id = tool.id
         @pt.update(pt_params)
         
@@ -36,6 +34,7 @@ class ProjectsToolsController < ApplicationController
     end
 
     def show
+        binding.pry
         @pt = ProjectsTool.find(params[:id])
     end
 

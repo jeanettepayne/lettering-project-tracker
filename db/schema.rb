@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_28_235052) do
+ActiveRecord::Schema.define(version: 2021_01_27_021544) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -64,9 +64,6 @@ ActiveRecord::Schema.define(version: 2021_02_28_235052) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "uid"
-    t.string "google_token"
-    t.string "google_refresh_token"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

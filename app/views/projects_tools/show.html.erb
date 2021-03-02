@@ -13,8 +13,6 @@
 
 <%= link_to "Edit Tool Info", edit_projects_tool_path(@pt) %><br>
 
-DELETE/REMOVE TOOL FROM PROJECT LINK<br>
-<%= button_to "Delete Tool", projects_tool_path(@pt), method: :delete %>
+<%= button_to "Delete Tool", projects_tool_path(@pt), method: :delete %><br>
 
-MAKE THIS A LINK BACK TO THE PROJECT YOU CAME HERE FROM
-<%= link_to "Back to Project", project_path(@pt.project) %>
+<%= link_to "Back to Project", project_path(@pt.project) %><br>
