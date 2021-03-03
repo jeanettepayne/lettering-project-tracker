@@ -10,7 +10,7 @@ class ProjectsToolsController < ApplicationController
 
     def create
         @pt = ProjectsTool.create(pt_params)
-        tool = Tool.where(brand: params["projects_tool"]["tool"]["brand"], name: params["projects_tool"]["tool"]["name"]).first_or_create
+        tool = Tool.(name: params["projects_tool"]["tool"]["name"]).first_or_create
         @pt.tool_id = tool.id
         @pt.update(pt_params)
         project = @pt.project
