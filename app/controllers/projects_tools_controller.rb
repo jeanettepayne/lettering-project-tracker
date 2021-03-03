@@ -13,6 +13,7 @@ class ProjectsToolsController < ApplicationController
         tool = Tool.where(brand: params["projects_tool"]["tool"]["brand"], name: params["projects_tool"]["tool"]["name"]).first_or_create
         @pt.tool_id = tool.id
         @pt.update(pt_params)
+        project = @pt.project
         
         # @tool = Tool.create(brand: params[:projects_tool][:tool][:brand], name: params[:projects_tool][:tool][:name])
         # binding.pry
@@ -20,7 +21,7 @@ class ProjectsToolsController < ApplicationController
         # @pt.tool_id = @tool.id
         # @pt.save
             # create project tools child here
-        redirect_to project_path(@pt.project_id)
+        redirect_to project_path(project)
     end
 
     def edit
@@ -34,7 +35,6 @@ class ProjectsToolsController < ApplicationController
     end
 
     def show
-        binding.pry
         @pt = ProjectsTool.find(params[:id])
     end
 
