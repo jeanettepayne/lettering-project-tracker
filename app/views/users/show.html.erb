@@ -9,7 +9,7 @@
 
 
 <br>
-<%= link_to "Edit Account Info", edit_user_path(@user) %><br>
+<%= button_to "Edit Account Info", edit_user_path(@user), method: :get %><br>
 <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
   <input type=submit value='Log Out'>
 <% end %><br>

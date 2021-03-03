@@ -50,11 +50,11 @@ class ProjectsToolsController < ApplicationController
     private
 
     def pt_params
-        params.require(:projects_tool).permit(:favorite, :project_id, :tool_id)
+        params.require(:projects_tool).permit(:favorite, :project_id, :tool_id, :tool)
     end
 
     def tool_params
-        params.require(:tools).permit(params[:projects_tool][:tools][:brand], params[:projects_tool][:tools][:name])
+        params.require(:tools).permit(params[:projects_tool][:tools][:name])
     end
 
 end

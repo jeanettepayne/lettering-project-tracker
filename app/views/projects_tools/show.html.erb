@@ -9,8 +9,13 @@
     <h4>Nah</h4>
 <% end %><br>
 
+<%= form_for(@pt) do |f| %>
+    <%= f.hidden_field :favorite, value: false %>
+    <label>Favorite This Tool?</label>
+    <%= f.check_box :favorite, {}, true, false %><br>
+    <%= f.submit "Update" %>
+<% end %><br>
 
-<%= link_to "Edit Tool Info", edit_projects_tool_path(@pt) %><br>
 
 <%= button_to "Remove Tool From Project", projects_tool_path(@pt), method: :delete %><br>
 

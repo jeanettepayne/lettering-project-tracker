@@ -8,11 +8,11 @@
         <%= link_to pt.tool.name, project_projects_tool_path(@project, pt) %><br>
     <% end %>
     </ul>
-<%= link_to "Add a Tool", new_project_projects_tool_path(@project) %><br>
+<%= button_to "Add a Tool", new_project_projects_tool_path(@project), method: :get %><br>
 
 <% if @project.photo.attached? %>
     <image class="resize" src="<%= (url_for(@project.photo)) %>">
 <% end %>
 <br>
-<%= link_to "Edit Project", edit_user_project_path(@project.user, @project) %><br>
-<%= button_to "Delete Project", user_project_path(@project.user, @project), method: :delete %>
+<%= button_to "Edit Project", edit_user_project_path(@project.user, @project), method: :get %> 
+<%= link_to "Delete Project", user_project_path(@project.user, @project) %>
