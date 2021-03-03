@@ -12,6 +12,7 @@ class ProjectsToolsController < ApplicationController
         @pt = ProjectsTool.create(pt_params)
         tool = Tool.find_or_create_by(name: params["projects_tool"]["tool"]["name"])
         @pt.tool_id = tool.id
+        @pt.project_id = params[:project_id]
         @pt.update(pt_params)
         project = @pt.project
         @pt.save

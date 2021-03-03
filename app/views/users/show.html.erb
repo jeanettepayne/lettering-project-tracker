@@ -4,7 +4,7 @@
 
 <h4>My Projects: </h4>
 <% @user.projects.each do |proj| %>
-    <%= link_to proj.title, user_project_path(proj) %><br>
+    <%= link_to proj.title, user_project_path(@user, proj) %><br>
 <% end %>
 
 
