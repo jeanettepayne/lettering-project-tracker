@@ -10,10 +10,11 @@ class ProjectsToolsController < ApplicationController
 
     def create
         @pt = ProjectsTool.create(pt_params)
-        tool = Tool.(name: params["projects_tool"]["tool"]["name"]).first_or_create
+        tool = Tool.find_or_create_by(name: params["projects_tool"]["tool"]["name"])
         @pt.tool_id = tool.id
         @pt.update(pt_params)
         project = @pt.project
+        @pt.save
         
         # @tool = Tool.create(brand: params[:projects_tool][:tool][:brand], name: params[:projects_tool][:tool][:name])
         # binding.pry
@@ -36,6 +37,13 @@ class ProjectsToolsController < ApplicationController
 
     def show
         @pt = ProjectsTool.find(params[:id])
+    end
+
+    def destroy
+        pt = ProjectsTool.find(params[:id])
+        project = pt.project
+        pt.destroy
+        redirect_to project_path(project)
     end
 
     private

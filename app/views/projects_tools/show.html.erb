@@ -1,6 +1,5 @@
 <h1>Tool Info</h1><br>
 
-<h4>Brand: <%= @pt.tool.brand %></h4><br>
 <h4>Name: <%= @pt.tool.name %></h4><br>
 
 <h4>Favorite Tool?</h4>
@@ -13,6 +12,6 @@
 
 <%= link_to "Edit Tool Info", edit_projects_tool_path(@pt) %><br>
 
-<%= button_to "Delete Tool", projects_tool_path(@pt), method: :delete %><br>
+<%= button_to "Remove Tool From Project", projects_tool_path(@pt), method: :delete %><br>
 
 <%= link_to "Back to Project", project_path(@pt.project) %><br>
