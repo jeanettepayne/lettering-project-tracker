@@ -4,7 +4,7 @@ class User < ApplicationRecord
 
     validates :first_name, presence: true
     validates :last_name, presence: true
-    validates :email, uniqueness: true
+    validates :email, presence: true, uniqueness: true, format: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     validates :password, length: {in: 5..20}
 
     def full_name
