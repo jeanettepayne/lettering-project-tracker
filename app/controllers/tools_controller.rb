@@ -1,5 +1,9 @@
 class ToolsController < ApplicationController
 
+    def popular
+        @list = Tool.most_used
+    end
+    
     def show
         @tool = Tool.find(params[:id])
         # @project = @tool.project

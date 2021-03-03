@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  get "tools/most-popular", to: "tools#popular"
+  
   resources :projects do
     resources :projects_tools
   end
@@ -19,6 +22,7 @@ Rails.application.routes.draw do
 
   get "/auth/facebook/callback", to: "sessions#create"
   get "/auth/failure", to: redirect('/')
+
 
   root 'welcome#home'
 
