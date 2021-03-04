@@ -15,4 +15,4 @@
 <% end %>
 <br>
 <%= button_to "Edit Project", edit_user_project_path(@project.user, @project), method: :get %> 
-<%= link_to "Delete Project", user_project_path(@project.user, @project), method: :delete %>
+<%= link_to "Delete Project", user_project_path(@project.user, @project), method: :delete, data: {confirm: "Are you sure?"} %>

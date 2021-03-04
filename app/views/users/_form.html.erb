@@ -11,21 +11,25 @@
             </ul>
         </div>
     <% end %>
-    
+    <div class="field">
     <label>First Name: </label>
     <%= f.text_field :first_name %><br>
-
+    </div>
+    <div class="field">
     <label>Last Name: </label>
     <%= f.text_field :last_name %><br>
-
+    </div>
+    <div class="field">
     <label>Email Address: </label>
     <%= f.text_field :email %><br>
-
+    </div>
+    <div class="field">
     <label>Password: </label>
     <%= f.password_field :password %><br>
-
+    </div>
+    <div class="field">
     <label>Confirm Password: </label>
     <%= f.password_field :password_confirmation %><br>
-
+    </div>
     <div class="button"><%= f.submit %></div>
 <% end %>

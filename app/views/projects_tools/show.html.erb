@@ -17,6 +17,6 @@
 <% end %><br>
 
 
-<%= button_to "Remove Tool From Project", projects_tool_path(@pt), method: :delete %><br>
+<%= button_to "Remove Tool From Project", projects_tool_path(@pt), method: :delete, data: {confirm: "Are you sure?"} %><br>
 
 <%= link_to "Back to Project", project_path(@pt.project) %><br>
