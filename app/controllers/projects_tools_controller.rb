@@ -1,4 +1,5 @@
 class ProjectsToolsController < ApplicationController
+    before_action :require_login
 
     def new
         # @tool = Tool.find_or_create_by(id: params[:tool_id])
@@ -56,5 +57,9 @@ class ProjectsToolsController < ApplicationController
     def tool_params
         params.require(:tools).permit(params[:projects_tool][:tools][:name])
     end
+
+    def require_login
+        return head(:forbidden) unless session.include? :user_id
+      end
 
 end

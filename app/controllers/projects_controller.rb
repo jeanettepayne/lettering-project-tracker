@@ -1,4 +1,6 @@
 class ProjectsController < ApplicationController
+    before_action :require_login
+    skip_before_action :require_login, only: [:index, :show]
 
     def show
         @project = Project.find_by(id: params[:id]) || Project.find_by(id: params[:project_id])
@@ -47,5 +49,9 @@ class ProjectsController < ApplicationController
     def project_params
         params.require(:project).permit(:title, :quote, :style, :photo, :user_id)
     end
+
+    def require_login
+        return head(:forbidden) unless session.include? :user_id
+      end
 
 end
