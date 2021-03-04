@@ -4,7 +4,8 @@ class Project < ApplicationRecord
     has_many :tools, through: :projects_tools
     has_one_attached :photo
 
-    
+    validates :title, length: {minimum: 2}
+    validates :quote, presence: true
 
     accepts_nested_attributes_for :projects_tools
 

@@ -1,4 +1,4 @@
-
+<br>
 <% @tools.each do |tool| %> 
-    <%= tool.name %><br>
+    <%= link_to tool.name, tool_path(tool) %><br>
 <% end %>

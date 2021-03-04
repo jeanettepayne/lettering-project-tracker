@@ -2,12 +2,14 @@
 
 <h4>Name: <%= @tool.name %></h4><br>
 
+<h4><%= @tool.name %> has been used on these projects:</h4><br>
+    <% @tool.projects_tools.each do |pt| %>
+        <ul>
+        <li><%= link_to pt.project.title, project_path(pt.project) %></li>
+        </ul>
+    <% end %>
 
-<%= link_to "Edit Tool Info", edit_projects_tool_path(@tool) %><br>
 
-DELETE/REMOVE TOOL FROM PROJECT LINK<br>
-<%= link_to "Delete Tool", projects_tool_path(@tool), method: :delete %>
 
-MAKE THIS A LINK BACK TO THE PROJECT YOU CAME HERE FROM
-<%= link_to "Back to Project", projects_path %>
+<%= button_to "Back to Tools List", tools_path, method: :get %>
 

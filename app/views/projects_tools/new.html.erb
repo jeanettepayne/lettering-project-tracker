@@ -1,6 +1,18 @@
 <h1>Add Tool to Project</h1><br>
 
 <%= form_for(@pt) do |f| %>
+    <% if @pt.errors.any? %>
+        <div id="error_explanation">
+            <h4>
+            <%= pluralize(@pt.errors.count, "error") %>:
+            </h4>
+            <ul>
+            <% @pt.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+            </ul>
+        </div>
+    <% end %>
     <%= f.fields_for(:tool) do |ft| %>
         <label>Select Existing Tool or Enter a New One: </label>
         <%= ft.text_field :name, placeholder: "Enter Brand then Name", list: "names_autocomplete" %>
