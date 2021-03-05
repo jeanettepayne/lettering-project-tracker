@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :projects_tools
   end
 
-  resources :tools
+  resources :tools, only: [:index, :show]
 
   resources :projects_tools
 

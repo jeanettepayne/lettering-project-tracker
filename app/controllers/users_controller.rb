@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     before_action :require_login
-    skip_before_action :require_login, only: [:index, :show]
+    skip_before_action :require_login, only: [:index, :show, :new, :create]
 
     def show
         @user = User.find_by(id: params[:id])

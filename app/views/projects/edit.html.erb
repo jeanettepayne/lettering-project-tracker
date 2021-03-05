@@ -1,6 +1,18 @@
 <h1>Edit Project</h1>
 
 <%= form_for(@project) do |f| %>
+    <% if @project.errors.any? %>
+        <div id="error_explanation">
+            <h4>
+            <%= pluralize(@project.errors.count, "error") %>:
+            </h4>
+            <ul>
+            <% @project.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+            </ul>
+        </div>
+    <% end %>
     <label>Title: </label>
     <%= f.text_field :title %><br>
 
@@ -9,15 +21,6 @@
 
     <label>Style: </label>
     <%= f.select :style, [["Digital"], ["Traditional"]] %><br>
-
-    <!-- Tools Used:<br>
-    <%= fields_for :tools do |tool| %>
-        <label>Brand: </label>
-        <%= tool.text_field :brand %><br>
-
-        <label>Name: </label>
-        <%= tool.text_field :name %><br>
-    <% end %> -->
 
     <label>Photo: </label>
     <%= f.file_field :photo %><br>
