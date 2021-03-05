@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
     before_action :require_login
-    skip_before_action :require_login, only: [:index, :show]
+    skip_before_action :require_login, only: [:index, :show, :digital, :traditional]
 
     def show
         @project = Project.find_by(id: params[:id]) || Project.find_by(id: params[:project_id])
@@ -44,6 +44,15 @@ class ProjectsController < ApplicationController
         redirect_to '/'
     end
 
+    def digital
+        @projects = Project.all.digital
+    end
+    
+    def traditional
+        @projects = Project.all.traditional
+    end
+
+
     private
 
     def project_params
@@ -52,6 +61,6 @@ class ProjectsController < ApplicationController
 
     def require_login
         return head(:forbidden) unless session.include? :user_id
-      end
+    end
 
 end

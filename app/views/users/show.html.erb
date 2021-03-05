@@ -2,7 +2,7 @@
 
 <h3><%= link_to "Add a new project", new_user_project_path(@user) %></h3><br>
 
-<h4>My Projects: </h4>
+<h4>My Projects:</h4>
 <% @user.projects.each do |proj| %>
     <%= link_to proj.title, user_project_path(@user, proj) %><br>
 <% end %>

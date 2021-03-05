@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
-  get "tools/most-popular", to: "tools#popular"
-  
+  get "/projects/digital", to: "projects#digital"
+  get "/projects/traditional", to: "projects#traditional"
+
   resources :projects do
     resources :projects_tools
   end
