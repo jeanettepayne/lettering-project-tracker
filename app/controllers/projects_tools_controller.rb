@@ -39,6 +39,7 @@ class ProjectsToolsController < ApplicationController
 
     def show
         @pt = ProjectsTool.find(params[:id])
+        @user = @pt.project.user
     end
 
     def destroy

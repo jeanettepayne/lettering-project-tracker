@@ -4,6 +4,7 @@ class ProjectsController < ApplicationController
 
     def show
         @project = Project.find_by(id: params[:id]) || Project.find_by(id: params[:project_id])
+        @user = @project.user
     end
 
     def index

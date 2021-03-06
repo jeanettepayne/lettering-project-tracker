@@ -9,14 +9,16 @@
     <h4>Nah</h4>
 <% end %><br>
 
-<%= form_for(@pt) do |f| %>
-    <%= f.hidden_field :favorite, value: false %>
-    <label>Favorite This Tool?</label>
-    <%= f.check_box :favorite, {}, true, false %><br>
-    <%= f.submit "Update" %>
-<% end %><br>
+<% if user_permitted %>
+    <%= form_for(@pt) do |f| %>
+        <%= f.hidden_field :favorite, value: false %>
+        <label>Favorite This Tool?</label>
+        <%= f.check_box :favorite, {}, true, false %><br>
+        <%= f.submit "Update" %>
+    <% end %><br>
 
 
 <%= button_to "Remove Tool From Project", projects_tool_path(@pt), method: :delete, data: {confirm: "Are you sure?"} %><br>
+<% end %>
 
 <%= link_to "Back to Project", project_path(@pt.project) %><br>
