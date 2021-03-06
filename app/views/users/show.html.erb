@@ -1,6 +1,9 @@
 <h1><%=@user.full_name%></h1>
 
-<h3><%= link_to "Add a new project", new_user_project_path(@user) %></h3><br>
+
+<% if user_permitted %>
+    <h3><%= link_to "Add a new project", new_user_project_path(@user) %></h3><br>
+<% end %>
 
 <h4>My Projects:</h4>
 <% @user.projects.each do |proj| %>
@@ -9,8 +12,12 @@
 
 
 <br>
-<%= button_to "Edit Account Info", edit_user_path(@user), method: :get %><br>
+<% if user_permitted %>
+    <%= button_to "Edit Account Info", edit_user_path(@user), method: :get %><br>
+<% end %>
 <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
   <input type=submit value='Log Out'>
 <% end %><br>
-<%= link_to "Delete Account", user_path(@user), method: :delete,data: {confirm: "Aww, are you sure? We'd hate to see you go!"} %>
+<% if user_permitted %>
+    <%= link_to "Delete Account", user_path(@user), method: :delete,data: {confirm: "Aww, are you sure? We'd hate to see you go!"} %>
+<% end %>

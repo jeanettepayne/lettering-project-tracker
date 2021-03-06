@@ -11,8 +11,14 @@ class ProjectsController < ApplicationController
     end
 
     def new
-        @project = Project.new
-        @project.user_id = params[:id]
+        @user = User.find_by(params[:user_id])
+        if @user.id == params[:user_id]
+            @project = Project.new
+            @project.user_id = params[:id]
+        else
+            redirect_to users_path
+            #message about not having permission
+        end
     end
 
     def create

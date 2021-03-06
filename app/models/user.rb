@@ -7,6 +7,10 @@ class User < ApplicationRecord
     validates :email, presence: true, uniqueness: true, format: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     validates :password, length: {in: 5..20}
 
+    def self.authorized
+        current_user.id == params[:user_id]
+    end
+
     def full_name
         self.first_name + " " + self.last_name
     end
