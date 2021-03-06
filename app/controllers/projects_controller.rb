@@ -12,8 +12,8 @@ class ProjectsController < ApplicationController
     end
 
     def new
-        @user = User.find_by(params[:user_id])
-        if @user.id == params[:user_id]
+        @user = User.find(params[:user_id])
+        if current_user.id == @user.id
             @project = Project.new
             @project.user_id = params[:id]
         else
@@ -33,22 +33,32 @@ class ProjectsController < ApplicationController
     end
 
     def edit
-        @project = Project.find(params[:id])
+        @user = User.find(params[:user_id])
+        if current_user.id == @user.id
+            @project = find_project
+        else
+            redirect_to user_path(@user)
+        end
     end
 
     def update
-        @project = Project.find(params[:id])
+        @project = find_project
         @project.update(project_params)
         redirect_to project_path(@project)
     end
 
     def destroy
-        project = Project.find(params[:id])
-        project.projects_tools.each do |pt|
-            pt.destroy
+        @user = User.find(params[:user_id])
+        if current_user.id == @user.id
+            project = find_project
+            project.projects_tools.each do |pt|
+                pt.destroy
+            end
+            project.destroy
+            redirect_to user_path(@user)
+        else
+            redirect_to project_path(project)
         end
-        project.destroy
-        redirect_to '/'
     end
 
     def digital
@@ -68,6 +78,10 @@ class ProjectsController < ApplicationController
 
     def require_login
         return head(:forbidden) unless session.include? :user_id
+    end
+
+    def find_project
+        Project.find(params[:id])
     end
 
 end

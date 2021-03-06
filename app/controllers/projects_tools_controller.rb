@@ -2,11 +2,17 @@ class ProjectsToolsController < ApplicationController
     before_action :require_login
 
     def new
-        # @tool = Tool.find_or_create_by(id: params[:tool_id])
-        @pt = ProjectsTool.new
-        @pt.project_id = params[:project_id]
+        project = Project.find(params[:project_id])
+        @user = project.user
+        if current_user.id == @user.id
+            # @tool = Tool.find_or_create_by(id: params[:tool_id])
+            @pt = ProjectsTool.new
+            @pt.project_id = params[:project_id]
     
-        render 'projects_tools/new'
+            render 'projects_tools/new'
+        else
+            redirect_to user_path(@user)
+        end
     end
 
     def create
@@ -28,7 +34,13 @@ class ProjectsToolsController < ApplicationController
     end
 
     def edit
-        @pt = ProjectsTool.find(params[:id])
+        project = Project.find(params[:project_id])
+        @user = project.user
+        if current_user.id == @user.id
+            @pt = ProjectsTool.find(params[:id])
+        else
+            redirect_to project_path(project)
+        end
     end
 
     def update
