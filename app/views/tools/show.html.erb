@@ -2,12 +2,11 @@
 
 <h4>Name: <%= @tool.name %></h4><br>
 
-<h4><%= @tool.name %> has been used on these projects:</h4><br>
+<h4><%= @tool.name %> has been used for these projects:</h4><br>
     <% @tool.projects_tools.each do |pt| %>
-        <%= link_to pt.project.title, project_path(pt.project) %>
+        <%= link_to pt.project.title, project_path(pt.project) %><br>
     <% end %>
-
-
+    <br>
 
 <%= button_to "Back to Tools List", tools_path, method: :get %>
 
