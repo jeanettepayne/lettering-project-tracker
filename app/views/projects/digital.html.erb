@@ -3,3 +3,5 @@
 <% @projects.each do |project| %>
     <%= link_to project.title, project_path(project) %><br>
 <% end %>
+
+<%= button_to "Browse Traditional Projects", projects_traditional_path, method: :get %>

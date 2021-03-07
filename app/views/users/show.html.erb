@@ -19,9 +19,6 @@
 <% if user_permitted %>
     <%= button_to "Edit Account Info", edit_user_path(@user), method: :get %><br>
 <% end %>
-<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
-  <input type=submit value='Log Out'>
-<% end %><br>
 <% if user_permitted %>
-    <%= link_to "Delete Account", user_path(@user), method: :delete,data: {confirm: "Aww, are you sure? We'd hate to see you go!"} %>
+    <%= link_to "Delete Account", user_path(@user), method: :delete,data: {confirm: "Aww, are you sure? We'd hate to see you go!"} %><br>
 <% end %>
