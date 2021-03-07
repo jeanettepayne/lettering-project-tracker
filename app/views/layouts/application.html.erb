@@ -28,6 +28,10 @@
         <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
           <input type=submit value='Log Out'>
         <% end %><br>
+      <% else %>
+        <div class="static"><%= link_to "All Projects", projects_path %></div>
+        <div class="static"><%= link_to "All Users", users_path %></div>
+        <div class="static"><%= link_to "All Tools", tools_path %></div>
       <% end %>
     </footer>
   </body>

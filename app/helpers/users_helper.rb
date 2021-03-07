@@ -1,7 +1,9 @@
 module UsersHelper
    
     def user_permitted
-        current_user.id == @user.id
+        if current_user
+            current_user.id == @user.id
+        end
     end
 
 end
