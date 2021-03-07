@@ -4,9 +4,7 @@
 
 <h4><%= @tool.name %> has been used on these projects:</h4><br>
     <% @tool.projects_tools.each do |pt| %>
-        <ul>
-        <li><%= link_to pt.project.title, project_path(pt.project) %></li>
-        </ul>
+        <%= link_to pt.project.title, project_path(pt.project) %>
     <% end %>
 
 

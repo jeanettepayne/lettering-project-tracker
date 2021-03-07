@@ -33,7 +33,9 @@ class ProjectsController < ApplicationController
     end
 
     def edit
-        @user = User.find(params[:user_id])
+        @project = find_project
+        # @user = User.find(params[:user_id])
+        @user = @project.user
         if current_user.id == @user.id
             @project = find_project
         else

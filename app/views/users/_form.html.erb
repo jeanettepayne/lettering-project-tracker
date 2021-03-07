@@ -4,11 +4,9 @@
             <h4>
             <%= pluralize(@user.errors.count, "error") %>:
             </h4>
-            <ul>
             <% @user.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
+                <%= msg %><br>
             <% end %>
-            </ul>
         </div>
     <% end %>
     <div class="field">

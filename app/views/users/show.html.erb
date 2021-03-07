@@ -1,13 +1,13 @@
 <h1><%=@user.full_name%></h1>
 
 <% flash.each do |type, msg| %>
-    <div class="alert"><%= msg %></div><br>
+    <div class="alert"><b><%= msg %></b></div><br>
 <% end %>
 
 
-<% if user_permitted %>
+<div id="project"><% if user_permitted %>
     <h3><%= link_to "Add a new project", new_user_project_path(@user) %></h3><br>
-<% end %>
+<% end %></div>
 
 <h4>My Projects:</h4>
 <% @user.projects.each do |proj| %>
@@ -19,6 +19,6 @@
 <% if user_permitted %>
     <%= button_to "Edit Account Info", edit_user_path(@user), method: :get %><br>
 <% end %>
-<% if user_permitted %>
+<div class="static"><% if user_permitted %>
     <%= link_to "Delete Account", user_path(@user), method: :delete,data: {confirm: "Aww, are you sure? We'd hate to see you go!"} %><br>
-<% end %>
+<% end %></div>

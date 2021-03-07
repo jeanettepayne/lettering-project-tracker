@@ -19,29 +19,57 @@
     height: auto;
 }
 
-.fa-star {
-    float: left;
-    font-size: 70%;
-    margin-top: 5px;
-    margin-right: 5px;
-  }
-  
-  .favorite { color: yellow; }
-
   body {
       background-color: rosybrown;
       font-family: 'Raleway', sans-serif;
       text-align: center;
   }
 
-  div.button {
+  .button {
       color: grey;
   }
 
-  div.username {
+  .username {
       text-align: left;
+  }
+
+  .alert {
+      color: mediumblue;
+  }
+
+  #error_explanation {
+      color: mediumblue;
   }
 
   h1 {
       font-style: bold;
+  }
+
+  footer {
+      text-alight: center;
+      padding: 20px;
+  }
+
+  footer a {
+      margin-right: 15px;
+  }
+
+  .static {
+      text-decoration: underline;
+      display: inline;
+  }
+
+  a:visited, a:link, a:active {
+      text-decoration: none;
+      color: black;
+  }
+
+
+  a:hover {
+      text-decoration: underline;
+      cursor: pointer;
+  }
+
+  #project {
+      text-decoration: underline;
   }

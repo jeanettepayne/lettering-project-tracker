@@ -1,7 +1,7 @@
 <h1><%= @project.title %></h1><br>
 
 <% flash.each do |type, msg| %>
-    <div class="alert"><%= msg %></div><br>
+    <div class="alert"><b><%= msg %></b></div><br>
 <% end %>
 
 <h5>Style:</h5>
@@ -10,12 +10,11 @@
 <h5>Quote:</h5>
 <%= @project.quote %><br>
 
-<h5>Tools used:</h5><br>
-    <ul>
+<h5>Tools used:</h5>
     <% @project.projects_tools.each do |pt|%>
         <%= link_to pt.tool.name, project_projects_tool_path(@project, pt) %><br>
     <% end %>
-    </ul>
+    <br>
 
 <% if user_permitted %>
     <%= button_to "Add a Tool", new_project_projects_tool_path(@project), method: :get %><br>
@@ -27,6 +26,6 @@
 <br>
 
 <% if user_permitted %>
-    <%= button_to "Edit Project", edit_user_project_path(@project.user, @project), method: :get %> 
-    <%= link_to "Delete Project", user_project_path(@project.user, @project), method: :delete, data: {confirm: "Are you sure?"} %>
+    <%= button_to "Edit Project", edit_user_project_path(@project.user, @project), method: :get %> <br>
+    <div class="static"><%= link_to "Delete Project", user_project_path(@project.user, @project), method: :delete, data: {confirm: "Are you sure?"} %></div>
 <% end %>

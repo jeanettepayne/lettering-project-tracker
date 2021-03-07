@@ -13,17 +13,17 @@
   </head>
 
   <body>
-    <div class="username"><% if logged_in? %></div>
+    <div class="username"><% if logged_in? %>
       Logged in as <%= current_user.first_name %>
-    <% end %>
+    <% end %></div>
 
     <%= yield %>
 
     <footer>
       <% if current_user %>
-        <%= link_to "Home", user_path(current_user) %>
-        <%= link_to "All Projects", projects_path %>
-        <%= link_to "All Users", users_path %>
+        <div class="static"><%= link_to "Home", user_path(current_user) %></div>
+        <div class="static"><%= link_to "All Projects", projects_path %></div>
+        <div class="static"><%= link_to "All Users", users_path %></div>
         <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
           <input type=submit value='Log Out'>
         <% end %><br>

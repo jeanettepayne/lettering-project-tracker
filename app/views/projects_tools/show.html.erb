@@ -1,5 +1,9 @@
 <h1>Tool Info</h1><br>
 
+<% flash.each do |type, msg| %>
+    <div class="alert"><b><%= msg %></b></div><br>
+<% end %>
+
 <h4>Name: <%= @pt.tool.name %></h4><br>
 
 <h4>Favorite Tool?</h4>
