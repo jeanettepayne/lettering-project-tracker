@@ -1,9 +1,6 @@
 <h1><%=@user.full_name%></h1>
 
-<% flash.each do |type, msg| %>
-    <div class="alert"><b><%= msg %></b></div><br>
-<% end %>
-
+<%= render 'projects/flash' %>
 
 <div id="project"><% if user_permitted %>
     <h3><%= link_to "Add a new project", new_user_project_path(@user) %></h3><br>

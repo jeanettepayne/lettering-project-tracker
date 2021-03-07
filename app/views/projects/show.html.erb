@@ -1,8 +1,6 @@
 <h1><%= @project.title %></h1><br>
 
-<% flash.each do |type, msg| %>
-    <div class="alert"><b><%= msg %></b></div><br>
-<% end %>
+<%= render 'flash' %>
 
 <h5>Style:</h5>
 <%= @project.style.camelcase %><br>
