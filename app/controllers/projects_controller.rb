@@ -18,7 +18,7 @@ class ProjectsController < ApplicationController
             @project.user_id = params[:id]
         else
             redirect_to users_path
-            #message about not having permission
+            flash.alert = "You can only add a new project to your own page!"
         end
     end
 
@@ -38,6 +38,7 @@ class ProjectsController < ApplicationController
             @project = find_project
         else
             redirect_to user_path(@user)
+            flash.alert = "You cannot edit another user's project!"
         end
     end
 

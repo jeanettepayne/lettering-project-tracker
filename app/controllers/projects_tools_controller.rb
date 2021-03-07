@@ -12,6 +12,7 @@ class ProjectsToolsController < ApplicationController
             render 'projects_tools/new'
         else
             redirect_to user_path(@user)
+            flash.alert = "You can only add tools to your own projects"
         end
     end
 
@@ -40,6 +41,7 @@ class ProjectsToolsController < ApplicationController
             @pt = ProjectsTool.find(params[:id])
         else
             redirect_to project_path(project)
+            flash.alert = "You can only edit tools on your own projects"
         end
     end
 

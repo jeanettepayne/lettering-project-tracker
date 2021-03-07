@@ -30,6 +30,7 @@ class UsersController < ApplicationController
             @user = User.find(params[:id])
         else
             redirect_to user_path(@user)
+            flash.alert = "You can only edit your own information"
         end
     end
 
