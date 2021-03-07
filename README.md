@@ -1,24 +1,13 @@
-# README
+DESCRIPTION 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to the Lettering Project Tracker! Our goal is to make it easy for hand lettering artists to track their work. Users can add projects with a title, quote, style, and optional photo. To each project a user can add the tools used to create their masterpiece. 
 
-Things you may want to cover:
+Users can also peruse the database for inspiration by looking at other artists' projects.
 
-* Ruby version
+INSTALLATION
 
-* System dependencies
+To use the Lettering Project Tracker, fork and clone this repo to your local environment, bundle install, and open a rails server ("rails s")
 
-* Configuration
+LICENSE 
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+MIT License 
