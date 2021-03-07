@@ -12,6 +12,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
   </head>
 
+  <header>
+    <% if !current_user %>
+      <div class="static"><%= link_to "Log In", login_path %></div>
+      <div class="static"><%= link_to "Sign Up", new_user_path %></div>
+    <% end %>
+  </header>
+
   <body>
     <div class="username"><% if logged_in? %>
       Logged in as <%= current_user.first_name %>

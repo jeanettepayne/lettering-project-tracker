@@ -1,5 +1,6 @@
 class ProjectsToolsController < ApplicationController
     before_action :require_login
+    skip_before_action :require_login, only: [:show]
 
     def new
         project = Project.find(params[:project_id])
@@ -23,14 +24,8 @@ class ProjectsToolsController < ApplicationController
         @pt.project_id = params[:project_id]
         @pt.update(pt_params)
         project = @pt.project
-        @pt.save
         
-        # @tool = Tool.create(brand: params[:projects_tool][:tool][:brand], name: params[:projects_tool][:tool][:name])
-        # binding.pry
-        # @pt = ProjectsTool.find_by(params[:projects_tool][:project_id], params[:projects_tool][:tool][:name])
-        # @pt.tool_id = @tool.id
-        # @pt.save
-            # create project tools child here
+        @pt.save
         redirect_to project_path(project)
     end
 
@@ -48,6 +43,7 @@ class ProjectsToolsController < ApplicationController
     def update
         @pt = ProjectsTool.find(params[:id])
         @pt.update(pt_params)
+
         redirect_to projects_tool_path(@pt)
     end
 
